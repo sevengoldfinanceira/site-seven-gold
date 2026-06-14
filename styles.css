@@ -1,6 +1,6 @@
 :root {
-  --purple: #170020;
-  --purple-2: #230532;
+  --purple: #150126;
+  --purple-2: #150126;
   --ink: #180326;
   --gold: #c99125;
   --gold-2: #f4b638;
@@ -53,16 +53,18 @@ a {
   gap: 12px;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  color: var(--gold-2);
-  font-family: "Playfair Display", serif;
-  font-size: 25px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
+.brand-logo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.footer-logo {
+  width: min(100%, 210px);
+  height: auto;
+  border-radius: 14px;
 }
 
 .brand strong {
@@ -155,7 +157,7 @@ a {
   color: var(--paper);
   background:
     radial-gradient(circle at 70% 20%, rgba(244, 182, 56, 0.17), transparent 34%),
-    linear-gradient(135deg, #170020 0%, #21002d 55%, #110018 100%);
+    linear-gradient(135deg, #150126 0%, #150126 55%, #150126 100%);
 }
 
 .eyebrow,
@@ -208,7 +210,7 @@ a {
   border-radius: 130px 4px 130px 4px;
   background:
     linear-gradient(160deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02)),
-    #2b1034;
+    #150126;
   box-shadow: var(--shadow);
 }
 
@@ -389,7 +391,7 @@ a {
   border-radius: 100px 4px 100px 4px;
   background:
     linear-gradient(rgba(23, 0, 32, 0.12), rgba(23, 0, 32, 0.85)),
-    radial-gradient(circle at 50% 35%, #6f4a23, #1b0b22 58%);
+    radial-gradient(circle at 50% 35%, #6f4a23, #150126 58%);
 }
 
 .gold-mark {
@@ -421,7 +423,7 @@ a {
   aspect-ratio: 1;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background-color: #2b1034;
+  background-color: #150126;
 }
 
 .avatar-two {
