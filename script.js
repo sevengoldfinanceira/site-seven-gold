@@ -3,13 +3,19 @@ const toggle = document.querySelector(".nav-toggle");
 const form = document.querySelector(".lead-form");
 const brand = document.querySelector(".site-header .brand");
 
-brand?.addEventListener("click", (event) => {
+function scrollToPageStart(event) {
   const isHomePage = !document.body.classList.contains("inner-page");
   if (!isHomePage) return;
 
   event.preventDefault();
   window.scrollTo({ top: 0, behavior: "smooth" });
   history.replaceState(null, "", `${location.pathname}${location.search}`);
+}
+
+brand?.addEventListener("click", scrollToPageStart);
+
+document.querySelectorAll('.main-nav a[href="#inicio"], .footer a[href="#inicio"]').forEach((link) => {
+  link.addEventListener("click", scrollToPageStart);
 });
 
 function updateHeaderAppearance() {
