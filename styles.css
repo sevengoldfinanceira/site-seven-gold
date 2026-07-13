@@ -403,13 +403,14 @@ a {
   line-height: 1.6;
 }
 .footer-bottom {
+  position: relative;
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: minmax(260px, 1fr) auto minmax(300px, 1fr);
   align-items: center;
   gap: clamp(24px, 4vw, 64px);
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 0;
   color: rgba(255, 255, 255, 0.55);
   font-size: 11px;
 }
@@ -510,19 +511,24 @@ a {
   }
 }
 
-.footer::after {
+.footer-bottom::before {
   content: "";
-  grid-column: 1 / -1;
-  display: block;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
   height: 3px;
-  margin-top: 2px;
   background:
     radial-gradient(circle at 50% 50%, #fff6bf 0 1px, #f5d874 2px, rgba(245, 201, 76, 0.58) 5px, transparent 15px),
     linear-gradient(90deg, transparent 0%, rgba(144, 104, 32, 0.38) 8%, #b98220 46%, #f5d874 50%, #b98220 54%, rgba(144, 104, 32, 0.38) 92%, transparent 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 31px 31px, 100% 1px;
+}
+
+.footer::after {
+  content: none;
+  display: none;
 }
 .whatsapp {
   position: fixed;
@@ -1271,6 +1277,132 @@ a {
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.76) 58%, rgba(0, 0, 0, 0.48) 100%),
       linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.2) 44%, #000 100%);
+  }
+}
+
+/* Padrão único para todos os botões principais de ação */
+main a.button,
+.success-page a.button {
+  width: min(100%, 380px);
+  min-height: 68px;
+  padding: 0 34px;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-align: center;
+}
+
+main .button .house-icon,
+.success-page .button .house-icon {
+  flex: 0 0 auto;
+  width: 21px;
+  height: 18px;
+  margin-right: 0;
+}
+
+main .button .house-icon::before,
+.success-page .button .house-icon::before {
+  top: -8px;
+  left: 2px;
+  width: 13px;
+  height: 13px;
+}
+
+main .button .house-icon::after,
+.success-page .button .house-icon::after {
+  right: 5px;
+  width: 5px;
+  height: 8px;
+}
+
+main .button .form-button-icon,
+.success-page .button .form-button-icon {
+  margin-right: 0;
+  font-size: 26px;
+}
+
+.why .whatsapp-button {
+  width: min(100%, 380px);
+  min-height: 68px;
+  padding: 0 34px;
+  font-size: 13px;
+}
+
+.why .whatsapp-button::before {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  margin-right: 0;
+}
+
+.story-card .video-button {
+  width: min(100%, 380px);
+  min-height: 68px;
+  padding: 0 34px 0 68px;
+  font-size: 13px;
+}
+
+.story-card .video-button::before {
+  left: 30px;
+  width: 21px;
+  height: 15px;
+}
+
+.story-card .video-button::after {
+  left: 52px;
+}
+
+.office-card .button-row {
+  align-items: stretch;
+}
+
+.office-card .button-row .button {
+  width: min(100%, 380px);
+  min-height: 68px;
+  font-size: 13px;
+}
+
+.office-card .calendar-icon {
+  width: 22px;
+  height: 21px;
+  margin-right: 0;
+}
+
+.office-card .map-icon {
+  width: 22px;
+  height: 25px;
+  margin-right: 0;
+}
+
+.simulator-form-card .form-submit {
+  min-height: 68px;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  main a.button,
+  .success-page a.button,
+  .why .whatsapp-button,
+  .story-card .video-button,
+  .office-card .button-row .button {
+    width: 100%;
+    min-height: 62px;
+    padding-right: 22px;
+    padding-left: 22px;
+    font-size: 12px;
+  }
+
+  .story-card .video-button {
+    padding-left: 58px;
+  }
+
+  .story-card .video-button::before {
+    left: 23px;
+  }
+
+  .story-card .video-button::after {
+    left: 45px;
   }
 }
 
@@ -2433,6 +2565,72 @@ a {
   }
 }
 
+/* Regra final: todos os CTAs compartilham exatamente a mesma escala */
+body main a.button {
+  width: min(100%, 380px) !important;
+  min-height: 68px !important;
+  padding: 0 34px !important;
+  gap: 12px;
+  font-size: 13px !important;
+  line-height: 1.2;
+  letter-spacing: 0.075em;
+  text-align: center;
+}
+
+body main .story-card a.video-button {
+  padding-left: 68px !important;
+}
+
+body main .button .house-icon {
+  flex: 0 0 auto;
+  width: 21px;
+  height: 18px;
+  margin-right: 0;
+}
+
+body main .button .form-button-icon {
+  margin-right: 0;
+  font-size: 26px;
+}
+
+body main .why .whatsapp-button::before {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  margin-right: 0;
+}
+
+body main .office-card .calendar-icon {
+  width: 22px;
+  height: 21px;
+  margin-right: 0;
+}
+
+body main .office-card .map-icon {
+  width: 22px;
+  height: 25px;
+  margin-right: 0;
+}
+
+body main .simulator-form-card .form-submit {
+  min-height: 68px;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  body main a.button {
+    width: 100% !important;
+    min-height: 62px !important;
+    padding-right: 22px !important;
+    padding-left: 22px !important;
+    font-size: 12px !important;
+  }
+
+  body main .story-card a.video-button {
+    padding-left: 58px !important;
+  }
+}
+
 /* Iluminação preta e dourada das chamadas finais */
 .final-cta.final-cta,
 .success-final-cta.success-final-cta {
@@ -3073,9 +3271,8 @@ body,
   }
 }
 
-/* Chamada pulsante nos botões "Quero simular" do cabeçalho. */
+/* Sombra estática nos botões "Quero simular" do cabeçalho. */
 .site-header .button.gold[href="simulador.html"] {
-  animation: whatsapp-pulse 1.45s ease-in-out infinite;
   box-shadow: 0 0 0 0 rgba(232, 177, 56, 0.42), 0 12px 28px rgba(232, 177, 56, 0.16);
 }
 
@@ -3094,8 +3291,7 @@ body,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .whatsapp,
-  .site-header .button.gold[href="simulador.html"] {
+  .whatsapp {
     animation: none;
   }
 }
