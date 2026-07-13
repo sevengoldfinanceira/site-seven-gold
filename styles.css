@@ -1157,10 +1157,10 @@ a {
 
 /* Composição final do banner inicial: texto central e fotografia fundida ao preto */
 .hero.hero {
-  min-height: clamp(980px, 120svh, 1120px);
+  min-height: clamp(1180px, 148svh, 1360px);
   align-items: center;
   padding-top: clamp(76px, 8vw, 118px);
-  padding-bottom: clamp(110px, 12vw, 170px);
+  padding-bottom: clamp(190px, 18vw, 270px);
 }
 
 .hero .hero-copy {
@@ -1168,6 +1168,7 @@ a {
   max-width: 1040px;
   margin: 0 auto;
   text-align: center;
+  top: -55px;
 }
 
 .hero .hero-copy h1,
@@ -1205,16 +1206,16 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 45%;
   transform: none;
   filter: saturate(0.84) contrast(1.04) brightness(0.76);
   -webkit-mask-image:
     linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 82%, rgba(0, 0, 0, 0.48) 92%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 9%, #000 82%, rgba(0, 0, 0, 0.72) 91%, transparent 100%);
+    linear-gradient(180deg, transparent 0%, #000 8%, #000 86%, rgba(0, 0, 0, 0.72) 94%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
     linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 82%, rgba(0, 0, 0, 0.48) 92%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 9%, #000 82%, rgba(0, 0, 0, 0.72) 91%, transparent 100%);
+    linear-gradient(180deg, transparent 0%, #000 8%, #000 86%, rgba(0, 0, 0, 0.72) 94%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -1222,18 +1223,19 @@ a {
   z-index: 2;
   background:
     linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.68) 12%, rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.28) 65%, rgba(0, 0, 0, 0.68) 88%, #000 100%),
-    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.12) 13%, rgba(0, 0, 0, 0.18) 70%, #000 100%);
+    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.12) 12%, rgba(0, 0, 0, 0.16) 72%, rgba(0, 0, 0, 0.72) 90%, #000 100%);
 }
 
 @media (max-width: 900px) {
   .hero.hero {
-    min-height: 900px;
+    min-height: 1020px;
     padding-top: 68px;
-    padding-bottom: 110px;
+    padding-bottom: 160px;
   }
 
   .hero .hero-copy {
     width: min(92%, 760px);
+    top: -30px;
   }
 
   .hero .hero-visual {
@@ -1244,13 +1246,14 @@ a {
 
 @media (max-width: 650px) {
   .hero.hero {
-    min-height: 820px;
+    min-height: 920px;
     padding-top: 52px;
-    padding-bottom: 88px;
+    padding-bottom: 130px;
   }
 
   .hero .hero-copy {
     width: 100%;
+    top: 0;
   }
 
   .hero .hero-visual {
