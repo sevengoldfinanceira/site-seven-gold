@@ -1155,6 +1155,110 @@ a {
   }
 }
 
+/* Composição final do banner inicial: texto central e fotografia fundida ao preto */
+.hero.hero {
+  min-height: clamp(980px, 120svh, 1120px);
+  align-items: center;
+  padding-top: clamp(76px, 8vw, 118px);
+  padding-bottom: clamp(110px, 12vw, 170px);
+}
+
+.hero .hero-copy {
+  width: min(78%, 1040px);
+  max-width: 1040px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero .hero-copy h1,
+.hero .hero-copy h2,
+.hero .hero-copy p:not(.eyebrow) {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero .hero-copy .button {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hero .hero-visual {
+  z-index: 0;
+  inset: 0 clamp(30px, 4.5vw, 88px);
+  max-width: none;
+  margin: 0;
+  opacity: 1;
+}
+
+.hero .hero-visual .arch {
+  overflow: hidden;
+  background: #000;
+}
+
+.hero .hero-visual .arch::before {
+  inset: -4%;
+  opacity: 0.3;
+  filter: blur(34px) saturate(0.7) brightness(0.46);
+}
+
+.hero .hero-visual .arch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  transform: none;
+  filter: saturate(0.84) contrast(1.04) brightness(0.76);
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 82%, rgba(0, 0, 0, 0.48) 92%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 9%, #000 82%, rgba(0, 0, 0, 0.72) 91%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 82%, rgba(0, 0, 0, 0.48) 92%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 9%, #000 82%, rgba(0, 0, 0, 0.72) 91%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.hero.hero::after {
+  z-index: 2;
+  background:
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.68) 12%, rgba(0, 0, 0, 0.3) 35%, rgba(0, 0, 0, 0.28) 65%, rgba(0, 0, 0, 0.68) 88%, #000 100%),
+    linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.12) 13%, rgba(0, 0, 0, 0.18) 70%, #000 100%);
+}
+
+@media (max-width: 900px) {
+  .hero.hero {
+    min-height: 900px;
+    padding-top: 68px;
+    padding-bottom: 110px;
+  }
+
+  .hero .hero-copy {
+    width: min(92%, 760px);
+  }
+
+  .hero .hero-visual {
+    right: 18px;
+    left: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero.hero {
+    min-height: 820px;
+    padding-top: 52px;
+    padding-bottom: 88px;
+  }
+
+  .hero .hero-copy {
+    width: 100%;
+  }
+
+  .hero .hero-visual {
+    right: 8px;
+    left: 8px;
+  }
+}
+
 /* Hero imersivo: foto inteira centralizada, texto sobreposto e fusão natural com o preto */
 .hero {
   position: relative;
@@ -1598,7 +1702,7 @@ main .button .form-button-icon,
 .why .image-arch {
   position: absolute;
   z-index: 0;
-  inset: -8% -5% -10% 29%;
+  inset: -8% -6% -10% 24%;
   width: auto;
   height: auto;
   background: transparent;
@@ -1607,12 +1711,12 @@ main .button .form-button-icon,
 .why .image-arch img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center 34%;
   filter: saturate(0.88) contrast(1.05) brightness(0.78);
-  transform: scale(0.94);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 76%, rgba(0, 0, 0, 0.78) 86%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 76%, rgba(0, 0, 0, 0.78) 86%, transparent 100%);
+  transform: none;
+  -webkit-mask-image: radial-gradient(ellipse 105% 96% at 57% 46%, #000 54%, rgba(0, 0, 0, 0.86) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 105% 96% at 57% 46%, #000 54%, rgba(0, 0, 0, 0.86) 70%, transparent 100%);
 }
 
 .why::after {
@@ -1621,15 +1725,15 @@ main .button .form-button-icon,
   z-index: 2;
   inset: 0;
   background:
-    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.98) 31%, rgba(0, 0, 0, 0.66) 47%, rgba(0, 0, 0, 0.12) 72%, rgba(0, 0, 0, 0.58) 100%),
-    linear-gradient(0deg, #000 0%, transparent 28%);
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.99) 29%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.1) 73%, rgba(0, 0, 0, 0.5) 100%),
+    linear-gradient(180deg, #000 0%, transparent 18%, transparent 70%, #000 100%);
   pointer-events: none;
 }
 
 @media (max-width: 900px) {
   .why {
-    display: grid;
-    min-height: 0;
+    display: flex;
+    min-height: 720px;
   }
 
   .why > div:first-child {
@@ -1637,23 +1741,29 @@ main .button .form-button-icon,
   }
 
   .why .image-arch {
-    position: relative;
+    position: absolute;
     z-index: 0;
-    inset: auto;
-    width: 120%;
-    height: 560px;
-    margin: -24px -10% -58px;
+    inset: 9% -42% -7% -20%;
+    width: auto;
+    height: auto;
+    margin: 0;
   }
 
   .why::after {
     z-index: 1;
-    background: linear-gradient(0deg, #000 0%, transparent 52%, #000 100%);
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.96) 0%, rgba(0, 0, 0, 0.72) 70%, rgba(0, 0, 0, 0.4) 100%),
+      linear-gradient(0deg, #000 0%, transparent 48%, #000 100%);
   }
 }
 
 @media (max-width: 650px) {
+  .why {
+    min-height: 680px;
+  }
+
   .why .image-arch {
-    height: 470px;
+    inset: 18% -74% -4% -40%;
   }
 }
 
