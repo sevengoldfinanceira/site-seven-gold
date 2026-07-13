@@ -1155,6 +1155,315 @@ a {
   }
 }
 
+/* Texto do banner inicial encostado ao cabeçalho para liberar os rostos da foto. */
+@media (min-width: 901px) {
+  .hero.hero {
+    align-items: flex-start;
+    padding-top: 12px;
+  }
+
+  .hero .hero-copy {
+    top: 0;
+  }
+}
+
+/* Alinhamento único do ícone de casa em todos os botões de ação. */
+.button:has(> .house-icon) {
+  gap: 12px;
+}
+
+.button > .house-icon,
+body main .button > .house-icon,
+.success-page .button > .house-icon,
+.home-cta > .house-icon {
+  position: relative;
+  top: 0;
+  display: inline-flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.button > .house-icon::before,
+body main .button > .house-icon::before,
+.success-page .button > .house-icon::before,
+.home-cta > .house-icon::before {
+  display: block;
+  font-size: 24px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+/* Alinha visualmente a assinatura do rodapé com o topo das demais colunas. */
+@media (min-width: 901px) {
+  .footer > .footer-about {
+    align-self: start;
+    margin-top: -64px;
+  }
+}
+
+/* Simulador compacto no desktop: formulário completo visível em uma tela a 100%. */
+@media (min-width: 1241px) {
+  .simulator-showcase {
+    gap: clamp(24px, 2.5vw, 40px);
+    padding-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .simulator-intro h1 {
+    margin: 12px 0 18px;
+    font-size: clamp(52px, 4.25vw, 72px);
+    line-height: 0.92;
+  }
+
+  .simulator-intro-text {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .simulator-benefit-list {
+    margin-top: 22px;
+  }
+
+  .simulator-benefit-list article {
+    grid-template-columns: 48px 1fr;
+    gap: 15px;
+    padding: 7px 0;
+  }
+
+  .simulator-benefit-list article > .material-symbols-outlined {
+    width: 48px;
+    height: 48px;
+    font-size: 25px;
+  }
+
+  .simulator-benefit-list article div {
+    padding-bottom: 8px;
+  }
+
+  .simulator-benefit-list strong {
+    font-size: 14px;
+  }
+
+  .simulator-benefit-list p {
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  .simulator-form-card {
+    max-width: 820px;
+    padding: 24px 30px;
+    border-radius: 20px;
+  }
+
+  .simulator-form-heading {
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+  }
+
+  .simulator-form-heading > .material-symbols-outlined {
+    margin-bottom: 4px;
+    font-size: 34px;
+  }
+
+  .simulator-form-heading h2 {
+    max-width: 480px;
+    font-size: clamp(25px, 1.85vw, 31px);
+    line-height: 1.03;
+  }
+
+  .simulator-form-grid {
+    gap: 12px 20px;
+  }
+
+  .simulator-form-card label {
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .simulator-form-card input,
+  .simulator-form-card select,
+  .simulator-form-card textarea {
+    min-height: 46px;
+    padding-left: 46px;
+    font-size: 13px;
+  }
+
+  .simulator-field > .material-symbols-outlined {
+    left: 14px;
+    font-size: 21px;
+  }
+
+  .simulator-textarea > .material-symbols-outlined {
+    top: 14px;
+  }
+
+  .simulator-form-card textarea {
+    min-height: 72px;
+    padding-top: 12px;
+  }
+
+  .simulator-form-card .form-submit {
+    min-height: 52px;
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+  .simulator-form-card .form-button-icon {
+    font-size: 22px;
+  }
+
+  .simulator-form-card .form-note {
+    gap: 8px;
+    margin-top: 14px;
+    padding-top: 12px;
+    font-size: 11px;
+  }
+
+  .simulator-form-card .form-note .material-symbols-outlined {
+    font-size: 20px;
+  }
+}
+
+/* Mural de clientes: fotografia integral ao fundo, conteúdo central e fusão com o preto. */
+.success-page .success-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: clamp(820px, 112svh, 1080px);
+  padding: clamp(28px, 3.5vw, 50px) var(--page-gutter) clamp(190px, 22vw, 320px);
+  place-items: start center;
+  overflow: hidden;
+  background: #000;
+  text-align: center;
+}
+
+.success-page .success-hero-copy {
+  position: relative;
+  z-index: 3;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.success-page .success-hero-copy > span {
+  font-size: 14px;
+}
+
+.success-page .success-hero h1 {
+  margin: 12px auto 18px;
+  font-size: clamp(68px, 7.4vw, 116px);
+  line-height: 0.84;
+  text-shadow: 0 3px 24px rgba(0, 0, 0, 0.7);
+}
+
+.success-page .success-hero p {
+  max-width: 760px;
+  margin: 0 auto 10px;
+  font-size: 16px;
+  line-height: 1.55;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.92);
+}
+
+.success-page .success-hero .button {
+  margin-top: 16px;
+}
+
+.success-page .success-hero-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+.success-page .success-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.88) contrast(1.05) brightness(0.72);
+  transform: none;
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.78) 84%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, #000 0%, #000 72%, rgba(0, 0, 0, 0.78) 84%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.success-page .success-hero::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.22) 14%, rgba(0, 0, 0, 0.12) 86%, #000 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.12) 52%, #000 100%);
+}
+
+@media (max-width: 900px) {
+  .success-page .success-hero {
+    min-height: 920px;
+    padding: 34px var(--page-gutter) 250px;
+  }
+
+  .success-page .success-hero-copy {
+    width: 100%;
+  }
+
+  .success-page .success-hero-image {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  .success-page .success-hero-image img {
+    object-position: center top;
+  }
+
+  .success-page .success-hero::after {
+    background:
+      linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.28) 15%, rgba(0, 0, 0, 0.2) 85%, #000 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.18) 48%, #000 100%);
+  }
+}
+
+@media (max-width: 650px) {
+  .success-page .success-hero {
+    min-height: 830px;
+    padding-top: 26px;
+    padding-bottom: 220px;
+  }
+
+  .success-page .success-hero-copy > span {
+    font-size: 11px;
+  }
+
+  .success-page .success-hero h1 {
+    margin-top: 10px;
+    font-size: clamp(54px, 16vw, 74px);
+  }
+
+  .success-page .success-hero p {
+    font-size: 14px;
+  }
+}
+
 /* Composição final do banner inicial: texto central e fotografia fundida ao preto */
 .hero.hero {
   min-height: clamp(1180px, 148svh, 1360px);
@@ -3866,9 +4175,25 @@ body {
   row-gap: 28px;
 }
 
+.location-booking-button {
+  margin-top: 26px;
+}
+
+.location .location-booking-button .calendar-icon {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 21px;
+  margin-right: 0;
+}
+
 @media (max-width: 650px) {
   .location {
     row-gap: 22px;
+  }
+
+  .location-booking-button {
+    width: 100%;
+    margin-top: 22px;
   }
 }
 
@@ -3906,6 +4231,25 @@ body {
   .legal-hero {
     padding-top: 30px;
     padding-bottom: 48px;
+  }
+}
+
+/* Menos espaço vazio após o carrossel de especialistas */
+.team.team {
+  padding-bottom: clamp(34px, 4vw, 54px);
+}
+
+.team .specialists-carousel {
+  padding-bottom: 18px;
+}
+
+@media (max-width: 650px) {
+  .team.team {
+    padding-bottom: 38px;
+  }
+
+  .team .specialists-carousel {
+    padding-bottom: 44px;
   }
 }
 
