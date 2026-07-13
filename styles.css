@@ -4282,6 +4282,100 @@ body {
   }
 }
 
+/* Banner inicial: conteúdo mais próximo do cabeçalho no desktop. */
+@media (min-width: 901px) {
+  .hero.hero {
+    padding-top: 0;
+  }
+
+  .hero.hero > .hero-copy {
+    margin-top: -34px;
+  }
+}
+
+/* Simulador compacto: formulário completo visível em 100% de zoom. */
+@media (min-width: 901px) {
+  .simulator-showcase {
+    padding-top: 18px;
+    padding-bottom: 36px;
+  }
+
+  .simulator-redesign .simulator-form-card {
+    padding: 24px 34px;
+  }
+
+  .simulator-redesign .simulator-form-heading {
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+  }
+
+  .simulator-redesign .simulator-form-heading > .material-symbols-outlined {
+    margin-bottom: 3px;
+    font-size: 38px;
+  }
+
+  .simulator-redesign .simulator-form-heading h2 {
+    font-size: clamp(25px, 2vw, 32px);
+    line-height: 1.04;
+  }
+
+  .simulator-redesign .simulator-form-grid {
+    gap: 13px 22px;
+  }
+
+  .simulator-redesign .simulator-form-card label {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .simulator-redesign .simulator-form-card input,
+  .simulator-redesign .simulator-form-card select,
+  .simulator-redesign .simulator-form-card textarea {
+    min-height: 50px;
+    padding-left: 48px;
+    font-size: 14px;
+  }
+
+  .simulator-redesign .simulator-field > .material-symbols-outlined {
+    left: 14px;
+    font-size: 22px;
+  }
+
+  .simulator-redesign .simulator-form-card textarea {
+    height: 78px;
+    min-height: 78px;
+    padding-top: 12px;
+  }
+
+  .simulator-redesign .simulator-textarea > .material-symbols-outlined {
+    top: 14px;
+  }
+
+  .simulator-redesign .simulator-form-card .form-submit {
+    min-height: 58px;
+    margin-top: 16px;
+  }
+
+  .simulator-redesign .simulator-form-card .form-note {
+    gap: 8px;
+    margin-top: 12px;
+    padding-top: 11px;
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .simulator-redesign .simulator-form-card .form-note .material-symbols-outlined {
+    font-size: 21px;
+  }
+}
+
+/* Um pouco mais de luz no rosto da lateral direita do banner inicial. */
+@media (min-width: 901px) {
+  .hero.hero::after {
+    background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.96) 28%, rgba(0, 0, 0, 0.34) 62%, rgba(0, 0, 0, 0.68) 100%);
+  }
+}
+
 .hero h1,
 .why .section-head h2,
 .clients .section-head h2,
