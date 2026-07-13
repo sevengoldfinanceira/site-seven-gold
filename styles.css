@@ -1168,7 +1168,7 @@ a {
   max-width: 1040px;
   margin: 0 auto;
   text-align: center;
-  top: -55px;
+  top: -120px;
 }
 
 .hero .hero-copy h1,
@@ -1206,7 +1206,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center 35%;
   transform: none;
   filter: saturate(0.84) contrast(1.04) brightness(0.76);
   -webkit-mask-image:
@@ -1235,7 +1235,7 @@ a {
 
   .hero .hero-copy {
     width: min(92%, 760px);
-    top: -30px;
+    top: -68px;
   }
 
   .hero .hero-visual {
@@ -1253,7 +1253,7 @@ a {
 
   .hero .hero-copy {
     width: 100%;
-    top: 0;
+    top: -18px;
   }
 
   .hero .hero-visual {
@@ -1692,7 +1692,7 @@ main .button .form-button-icon,
   isolation: isolate;
   overflow: hidden;
   display: flex;
-  min-height: clamp(620px, 52vw, 760px);
+  min-height: clamp(760px, 62vw, 940px);
   align-items: center;
 }
 
@@ -1705,7 +1705,7 @@ main .button .form-button-icon,
 .why .image-arch {
   position: absolute;
   z-index: 0;
-  inset: -8% -6% -10% 24%;
+  inset: -5% -5% -16% 18%;
   width: auto;
   height: auto;
   background: transparent;
@@ -1715,11 +1715,17 @@ main .button .form-button-icon,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 34%;
+  object-position: center 44%;
   filter: saturate(0.88) contrast(1.05) brightness(0.78);
   transform: none;
-  -webkit-mask-image: radial-gradient(ellipse 105% 96% at 57% 46%, #000 54%, rgba(0, 0, 0, 0.86) 70%, transparent 100%);
-  mask-image: radial-gradient(ellipse 105% 96% at 57% 46%, #000 54%, rgba(0, 0, 0, 0.86) 70%, transparent 100%);
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 84%, rgba(0, 0, 0, 0.48) 94%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 8%, #000 84%, rgba(0, 0, 0, 0.68) 93%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.48) 8%, #000 18%, #000 84%, rgba(0, 0, 0, 0.48) 94%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 8%, #000 84%, rgba(0, 0, 0, 0.68) 93%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .why::after {
@@ -1729,14 +1735,14 @@ main .button .form-button-icon,
   inset: 0;
   background:
     linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.99) 29%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.1) 73%, rgba(0, 0, 0, 0.5) 100%),
-    linear-gradient(180deg, #000 0%, transparent 18%, transparent 70%, #000 100%);
+    linear-gradient(180deg, #000 0%, transparent 14%, transparent 73%, rgba(0, 0, 0, 0.52) 88%, #000 100%);
   pointer-events: none;
 }
 
 @media (max-width: 900px) {
   .why {
     display: flex;
-    min-height: 720px;
+    min-height: 820px;
   }
 
   .why > div:first-child {
@@ -1746,7 +1752,7 @@ main .button .form-button-icon,
   .why .image-arch {
     position: absolute;
     z-index: 0;
-    inset: 9% -42% -7% -20%;
+    inset: 7% -38% -15% -18%;
     width: auto;
     height: auto;
     margin: 0;
@@ -1762,11 +1768,11 @@ main .button .form-button-icon,
 
 @media (max-width: 650px) {
   .why {
-    min-height: 680px;
+    min-height: 760px;
   }
 
   .why .image-arch {
-    inset: 18% -74% -4% -40%;
+    inset: 15% -68% -12% -36%;
   }
 }
 
@@ -2786,29 +2792,9 @@ body main .simulator-form-card .form-submit {
   background: radial-gradient(circle at 85% 10%, rgba(232, 177, 56, 0.08), transparent 35%), linear-gradient(180deg, #fff 0%, #fdfcf9 100%);
 }
 
-.steps > *:not(.steps-ambient) {
+.steps > * {
   position: relative;
   z-index: 2;
-}
-
-.steps-ambient {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  width: 44%;
-  height: 48%;
-  opacity: 0.13;
-  background: url("assets/especialista-guilherme.png") center 25% / cover no-repeat;
-  -webkit-mask-image: linear-gradient(to left, #000 18%, rgba(0,0,0,.65) 58%, transparent 100%);
-  mask-image: linear-gradient(to left, #000 18%, rgba(0,0,0,.65) 58%, transparent 100%);
-}
-
-.steps-ambient::after {
-  content: "";
-  position: absolute;
-  inset: 45% 0 0;
-  background: linear-gradient(transparent, #fff);
 }
 
 .steps .section-head {
@@ -3009,13 +2995,11 @@ body main .simulator-form-card .form-submit {
 }
 
 @media (max-width: 1200px) {
-  .steps-ambient { opacity: .07; }
   .steps .step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 68px 22px; }
   .steps .step-grid::before { display: none; }
 }
 
 @media (max-width: 650px) {
-  .steps-ambient { display: none; }
   .steps .section-head > span { gap: 12px; font-size: 12px; }
   .steps .section-head > span::after { width: 50px; }
   .steps .section-head h2 { font-size: clamp(42px, 13vw, 58px); letter-spacing: -.02em; }
