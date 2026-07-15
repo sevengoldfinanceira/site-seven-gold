@@ -50,9 +50,20 @@ toggle?.addEventListener("click", () => {
 });
 
 document.querySelectorAll(".main-nav a").forEach((link) => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click", (event) => {
     header.classList.remove("menu-open");
     toggle?.setAttribute("aria-expanded", "false");
+
+    const isMobileContactLink =
+      link.getAttribute("href") === "#contato" &&
+      window.matchMedia("(max-width: 900px)").matches;
+    const footerContact = document.querySelector(".footer-contact");
+
+    if (!isMobileContactLink || !footerContact) return;
+
+    event.preventDefault();
+    footerContact.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", `${location.pathname}${location.search}#contato`);
   });
 });
 
