@@ -627,7 +627,12 @@ a {
     display: grid;
   }
   .footer {
+    padding-top: 28px;
     padding-bottom: 100px;
+  }
+
+  .footer > .footer-about img {
+    margin-bottom: -70px;
   }
 }
 
@@ -1411,6 +1416,19 @@ a {
     min-height: 58px;
     padding: 0 22px;
     font-size: 11px;
+  }
+}
+
+@media (max-width: 650px) {
+  .hero-home__media img {
+    top: 8%;
+    height: 82%;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
   }
 }
 
@@ -2635,6 +2653,14 @@ main .button .form-button-icon,
 @media (max-width: 650px) {
   .why {
     min-height: 760px;
+  }
+
+  .why > div:first-child,
+  .why .section-head,
+  .why > div:first-child > p {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
   }
 
   .why .image-arch {
@@ -3870,10 +3896,14 @@ body main .simulator-form-card .form-submit {
   .steps .section-head > span::after { width: 50px; }
   .steps .section-head h2 { font-size: clamp(42px, 13vw, 58px); letter-spacing: -.02em; }
   .steps .section-head p { font-size: 17px; }
-  .steps .step-grid { grid-template-columns: 1fr; gap: 54px; margin-top: 62px; }
-  .steps .step-grid article,.steps .step-grid article + article { min-height: 0; padding: 62px 22px 26px; }
-  .steps .step-grid b { top: -27px; width: 54px; height: 54px; font-size: 23px; }
-  .steps .step-icon { font-size: 48px; }
+  .steps .step-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 50px 12px; margin-top: 58px; }
+  .steps .step-grid article,.steps .step-grid article + article { min-height: 0; padding: 52px 10px 20px; }
+  .steps .step-grid article:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - 12px) / 2); justify-self: center; }
+  .steps .step-grid b { top: -23px; width: 46px; height: 46px; font-size: 20px; }
+  .steps .step-icon { margin-bottom: 14px; font-size: 42px; }
+  .steps .step-grid h3 { min-height: 72px; font-size: clamp(16px, 4.4vw, 18px); line-height: 1.12; }
+  .steps .step-grid h3::after { width: 34px; margin: 14px auto 12px; }
+  .steps .step-grid p { max-width: 100%; font-size: 12px; line-height: 1.45; }
   .steps > .home-cta { width: 100%; min-height: 62px; margin-top: 30px; padding: 0 20px; }
   .steps.steps { padding-bottom: 30px; }
 }
