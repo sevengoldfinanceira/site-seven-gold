@@ -25,6 +25,21 @@ function updateHeaderAppearance() {
 window.addEventListener("scroll", updateHeaderAppearance, { passive: true });
 updateHeaderAppearance();
 
+const dreamWall = document.querySelector(".dream-wall");
+
+if (dreamWall) {
+  const photos = [...dreamWall.children];
+
+  for (let index = photos.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [photos[index], photos[randomIndex]] = [photos[randomIndex], photos[index]];
+  }
+
+  const shuffledPhotos = document.createDocumentFragment();
+  photos.forEach((photo) => shuffledPhotos.appendChild(photo));
+  dreamWall.appendChild(shuffledPhotos);
+}
+
 const animatedSections = [...document.querySelectorAll("main > section")];
 
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
