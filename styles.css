@@ -678,11 +678,16 @@ a {
 
 .success-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: calc(100% - 2 * var(--page-gutter));
+  max-width: 1420px;
+  margin: 0 auto clamp(42px, 5vw, 70px);
   gap: 1px;
-  padding: 0 var(--page-gutter) clamp(42px, 5vw, 70px);
+  overflow: hidden;
+  border-top: 1px solid rgba(232, 177, 56, 0.32);
+  border-bottom: 1px solid rgba(232, 177, 56, 0.32);
+  background: rgba(232, 177, 56, 0.2);
   color: #fff;
-  background: #000;
 }
 
 .success-stats article {
@@ -692,7 +697,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(232, 177, 56, 0.38);
+  background: #090909;
   text-align: center;
 }
 .success-stats strong {
