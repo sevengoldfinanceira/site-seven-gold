@@ -56,23 +56,25 @@ if (featuredClientCards) {
 }
 
 const animatedSections = [...document.querySelectorAll("main > section")];
-const homeStats = document.querySelector(".home-stats");
-const countUpNumbers = [...document.querySelectorAll("[data-count-up]")];
+const statsSections = document.querySelectorAll(".home-stats, .success-stats");
 const countUpFormatter = new Intl.NumberFormat("pt-BR");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function formatCountUpNumber(element, value) {
   const prefix = element.dataset.prefix || "";
-  return `${prefix}${countUpFormatter.format(value)}`;
+  const suffix = element.dataset.suffix || "";
+  return `${prefix}${countUpFormatter.format(value)}${suffix}`;
 }
 
-function showFinalCountUpNumbers() {
-  countUpNumbers.forEach((element) => {
+function showFinalCountUpNumbers(section) {
+  const numbers = [...section.querySelectorAll("[data-count-up]")];
+  numbers.forEach((element) => {
     element.textContent = formatCountUpNumber(element, Number(element.dataset.countUp));
   });
 }
 
-function animateCountUpNumbers() {
+function animateCountUpNumbers(section) {
+  const numbers = [...section.querySelectorAll("[data-count-up]")];
   const duration = 1700;
   const startTime = performance.now();
 
@@ -80,7 +82,7 @@ function animateCountUpNumbers() {
     const progress = Math.min((currentTime - startTime) / duration, 1);
     const easedProgress = 1 - Math.pow(1 - progress, 3);
 
-    countUpNumbers.forEach((element) => {
+    numbers.forEach((element) => {
       const finalValue = Number(element.dataset.countUp);
       const currentValue = Math.round(finalValue * easedProgress);
       element.textContent = formatCountUpNumber(element, currentValue);
@@ -91,29 +93,32 @@ function animateCountUpNumbers() {
       return;
     }
 
-    showFinalCountUpNumbers();
+    showFinalCountUpNumbers(section);
   }
 
   window.requestAnimationFrame(updateCountUpNumbers);
 }
 
-if (homeStats && countUpNumbers.length) {
+statsSections.forEach((section) => {
+  const numbers = [...section.querySelectorAll("[data-count-up]")];
+  if (!numbers.length) return;
+
   if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-    showFinalCountUpNumbers();
+    showFinalCountUpNumbers(section);
   } else {
-    countUpNumbers.forEach((element) => {
+    numbers.forEach((element) => {
       element.textContent = formatCountUpNumber(element, 0);
     });
 
     const countUpObserver = new IntersectionObserver(([entry], observer) => {
       if (!entry.isIntersecting) return;
-      animateCountUpNumbers();
+      animateCountUpNumbers(section);
       observer.disconnect();
     }, { threshold: 0.3, rootMargin: "0px 0px -6% 0px" });
 
-    countUpObserver.observe(homeStats);
+    countUpObserver.observe(section);
   }
-}
+});
 
 if ("IntersectionObserver" in window && !prefersReducedMotion) {
   const sectionObserver = new IntersectionObserver((entries, observer) => {
@@ -194,8 +199,7 @@ let specialistCarouselPaused = false;
 
 function visibleSpecialists() {
   if (window.innerWidth <= 650) return 1;
-  if (window.innerWidth <= 1000) return 2;
-  return 3;
+  return 2;
 }
 
 function specialistPages() {

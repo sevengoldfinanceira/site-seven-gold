@@ -726,7 +726,7 @@ a {
 .dream-wall { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
 
 .dream-wall-section .section-head p {
-  max-width: 760px;
+  max-width: 940px;
   margin: 18px auto 0;
   color: #68636b;
   font-size: 15px;
@@ -4518,7 +4518,7 @@ body,
 }
 
 .specialist-card {
-  flex: 0 0 calc((100% - 36px) / 3);
+  flex: 0 0 calc((100% - 18px) / 2);
   overflow: hidden;
   aspect-ratio: 1 / 1;
   scroll-snap-align: center;
