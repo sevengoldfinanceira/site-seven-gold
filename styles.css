@@ -1368,16 +1368,16 @@ a {
 
 .hero-home__button {
   display: inline-flex;
-  min-height: 62px;
+  min-height: 70px;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 0 42px;
+  padding: 0 56px;
   color: #050505;
   background: var(--gold-solid);
   border: 1px solid rgba(245, 216, 116, 0.86);
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -1477,9 +1477,9 @@ a {
 
   .hero-home__button {
     width: 100%;
-    min-height: 58px;
+    min-height: 64px;
     padding: 0 22px;
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
