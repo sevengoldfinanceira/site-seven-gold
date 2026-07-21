@@ -106,7 +106,7 @@ form?.addEventListener("submit", (event) => {
   const mensagem = data.get("mensagem") || "Sem mensagem adicional.";
   const valorImovel = data.get("valor_imovel");
   const entrada = data.get("entrada");
-  const fgts = data.get("fgts");
+  const valorParcela = data.get("valor_parcela");
 
   const text = [
     "Olá, quero fazer uma simulação com a Seven Gold.",
@@ -116,7 +116,7 @@ form?.addEventListener("submit", (event) => {
     `Interesse: ${interesse}`,
     valorImovel ? `Valor aproximado do imóvel: ${valorImovel}` : null,
     entrada ? `Valor disponível para entrada: ${entrada}` : null,
-    fgts ? `Possui FGTS: ${fgts}` : null,
+    valorParcela ? `Valor da parcela: ${valorParcela}` : null,
     `Mensagem: ${mensagem}`,
   ].filter(Boolean).join("\n");
 
