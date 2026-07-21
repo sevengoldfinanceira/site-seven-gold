@@ -56,8 +56,66 @@ if (featuredClientCards) {
 }
 
 const animatedSections = [...document.querySelectorAll("main > section")];
+const homeStats = document.querySelector(".home-stats");
+const countUpNumbers = [...document.querySelectorAll("[data-count-up]")];
+const countUpFormatter = new Intl.NumberFormat("pt-BR");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+function formatCountUpNumber(element, value) {
+  const prefix = element.dataset.prefix || "";
+  return `${prefix}${countUpFormatter.format(value)}`;
+}
+
+function showFinalCountUpNumbers() {
+  countUpNumbers.forEach((element) => {
+    element.textContent = formatCountUpNumber(element, Number(element.dataset.countUp));
+  });
+}
+
+function animateCountUpNumbers() {
+  const duration = 1700;
+  const startTime = performance.now();
+
+  function updateCountUpNumbers(currentTime) {
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+    countUpNumbers.forEach((element) => {
+      const finalValue = Number(element.dataset.countUp);
+      const currentValue = Math.round(finalValue * easedProgress);
+      element.textContent = formatCountUpNumber(element, currentValue);
+    });
+
+    if (progress < 1) {
+      window.requestAnimationFrame(updateCountUpNumbers);
+      return;
+    }
+
+    showFinalCountUpNumbers();
+  }
+
+  window.requestAnimationFrame(updateCountUpNumbers);
+}
+
+if (homeStats && countUpNumbers.length) {
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    showFinalCountUpNumbers();
+  } else {
+    countUpNumbers.forEach((element) => {
+      element.textContent = formatCountUpNumber(element, 0);
+    });
+
+    const countUpObserver = new IntersectionObserver(([entry], observer) => {
+      if (!entry.isIntersecting) return;
+      animateCountUpNumbers();
+      observer.disconnect();
+    }, { threshold: 0.3, rootMargin: "0px 0px -6% 0px" });
+
+    countUpObserver.observe(homeStats);
+  }
+}
+
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
   const sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
