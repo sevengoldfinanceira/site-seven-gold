@@ -40,6 +40,21 @@ if (dreamWall) {
   dreamWall.appendChild(shuffledPhotos);
 }
 
+const featuredClientCards = document.querySelector(".client-cards");
+
+if (featuredClientCards) {
+  const cards = [...featuredClientCards.children];
+
+  for (let index = cards.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [cards[index], cards[randomIndex]] = [cards[randomIndex], cards[index]];
+  }
+
+  const shuffledCards = document.createDocumentFragment();
+  cards.forEach((card) => shuffledCards.appendChild(card));
+  featuredClientCards.appendChild(shuffledCards);
+}
+
 const animatedSections = [...document.querySelectorAll("main > section")];
 
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
