@@ -773,9 +773,9 @@ a {
 
 .testimonial-page-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(560px, 680px);
+  grid-template-columns: minmax(0, 1fr) minmax(560px, 760px);
   align-items: center;
-  gap: clamp(36px, 4vw, 70px);
+  gap: clamp(30px, 3vw, 52px);
   padding: clamp(85px, 10vw, 140px) var(--page-gutter);
   color: #fff;
   background: #000;
@@ -794,7 +794,7 @@ a {
   align-items: stretch;
   gap: clamp(14px, 2vw, 28px);
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
   justify-self: center;
 }
 
