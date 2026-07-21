@@ -680,15 +680,15 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  padding: 0 var(--page-gutter) clamp(75px, 8vw, 115px);
+  padding: 0 var(--page-gutter) clamp(42px, 5vw, 70px);
   color: #fff;
   background: #000;
 }
 
 .success-stats article {
   display: flex;
-  min-height: 250px;
-  padding: 30px;
+  min-height: clamp(150px, 12vw, 185px);
+  padding: 22px 18px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -697,23 +697,25 @@ a {
 }
 .success-stats strong {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   color: #e8b138;
   font-family: var(--display);
-  font-size: clamp(34px, 3.2vw, 52px);
+  font-size: clamp(28px, 2.5vw, 44px);
   line-height: 1.05;
 }
 .success-stats h2 {
-  margin: 0 0 8px;
+  margin: 0 0 5px;
   color: #fff;
-  font-size: 12px;
-  letter-spacing: 0.13em;
+  font-size: 11px;
+  line-height: 1.25;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .success-stats p {
   margin: 0;
   color: rgba(255, 255, 255, 0.66);
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 @media (min-width: 901px) {
@@ -822,6 +824,12 @@ a {
 
 @media (max-width: 650px) {
   .success-stats,.dream-wall { grid-template-columns: 1fr 1fr; }
+  .success-stats { padding-bottom: 38px; }
+  .success-stats article { min-height: 118px; padding: 16px 10px; }
+  .success-stats strong { margin-bottom: 7px; font-size: clamp(24px, 8vw, 32px); }
+  .success-stats article:nth-child(2) strong { font-size: clamp(17px, 4.7vw, 20px); letter-spacing: -0.035em; white-space: nowrap; }
+  .success-stats h2 { margin-bottom: 4px; font-size: 10px; line-height: 1.25; letter-spacing: 0.07em; }
+  .success-stats p { max-width: 160px; font-size: 10px; line-height: 1.35; }
   .success-stats article:last-child { grid-column: 1/-1; }
   .success-hero h1 { font-size: clamp(58px,19vw,88px); }
 
@@ -5739,7 +5747,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(16px, 1.8vw, 28px) clamp(18px, 3vw, 48px);
+  padding: clamp(10px, 1vw, 16px) clamp(18px, 3vw, 48px);
   color: #fff;
   background: #000;
 }
@@ -5758,7 +5766,7 @@ body.home-page main .story-card a.video-button:focus-visible {
 .home-stats__grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  width: min(1640px, 100%);
+  width: min(1420px, 100%);
   margin: 0 auto;
   padding: 0;
   gap: 1px;
@@ -5772,8 +5780,8 @@ body.home-page main .story-card a.video-button:focus-visible {
 .home-stats__grid li {
   display: flex;
   min-width: 0;
-  min-height: clamp(170px, 14vw, 220px);
-  padding: clamp(28px, 3.4vw, 52px) clamp(16px, 2.4vw, 38px);
+  min-height: clamp(124px, 9vw, 154px);
+  padding: clamp(20px, 2.2vw, 32px) clamp(16px, 2vw, 30px);
   flex-direction: column;
   justify-content: center;
   background:
@@ -5785,7 +5793,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   display: block;
   color: #e8b138;
   font-family: var(--display);
-  font-size: clamp(54px, 5.15vw, 86px);
+  font-size: clamp(42px, 3.8vw, 64px);
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: -0.045em;
@@ -5795,9 +5803,9 @@ body.home-page main .story-card a.video-button:focus-visible {
 
 .home-stats__grid span {
   display: block;
-  margin-top: 20px;
+  margin-top: 12px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: clamp(13px, 1.08vw, 17px);
+  font-size: clamp(12px, 0.9vw, 15px);
   font-weight: 700;
   line-height: 1.35;
 }
@@ -5808,9 +5816,9 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .home-stats__grid li {
-    min-height: 150px;
+    min-height: 122px;
     align-items: center;
-    padding: 30px 18px;
+    padding: 22px 14px;
     text-align: center;
   }
 
@@ -5819,33 +5827,33 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .home-stats__grid strong {
-    font-size: clamp(48px, 8.5vw, 72px);
+    font-size: clamp(38px, 7vw, 56px);
   }
 
   .home-stats__grid span {
-    margin-top: 14px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 520px) {
   .home-stats {
-    padding: 10px 14px 18px;
+    padding: 8px 12px 14px;
   }
 
   .home-stats__grid li {
-    min-height: 126px;
-    padding: 24px 10px;
+    min-height: 100px;
+    padding: 18px 8px;
   }
 
   .home-stats__grid strong {
-    font-size: clamp(42px, 13vw, 56px);
+    font-size: clamp(34px, 10.5vw, 46px);
   }
 
   .home-stats__grid span {
-    max-width: 145px;
-    margin-top: 11px;
-    font-size: 12px;
+    max-width: 130px;
+    margin-top: 8px;
+    font-size: 11px;
   }
 }
 
@@ -5874,6 +5882,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   min-width: 0;
   min-height: 118px;
   padding: 22px 14px;
+  overflow: hidden;
   background: #fff;
 }
 
@@ -5887,6 +5896,36 @@ body.home-page main .story-card a.video-button:focus-visible {
 
 .partner-icons .partner-logo--wide img {
   max-height: 52px;
+}
+
+/* Compensa as margens transparentes internas dos arquivos de marca. */
+.partner-logo--caixa img {
+  transform: scale(1.45);
+}
+
+.partner-logo--santander img {
+  transform: scale(1.6);
+}
+
+.partner-logo--bb img,
+.partner-logo--embracon img {
+  transform: scale(1.22);
+}
+
+.partner-logo--porto img {
+  transform: scale(1.42);
+}
+
+.partner-logo--ancora img {
+  transform: scale(1.5);
+}
+
+.partner-logo--alpha {
+  padding-inline: 6px;
+}
+
+.partner-logo--alpha img {
+  transform: scale(1.08);
 }
 
 @media (max-width: 1180px) {
@@ -5912,5 +5951,10 @@ body.home-page main .story-card a.video-button:focus-visible {
 
   .partner-icons .partner-logo--wide img {
     max-height: 44px;
+  }
+
+  .partner-logo--santander img,
+  .partner-logo--ancora img {
+    transform: scale(1.4);
   }
 }
