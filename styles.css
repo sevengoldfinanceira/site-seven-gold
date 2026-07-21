@@ -5734,8 +5734,183 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 }
 
+/* Números da Seven Gold: faixa de credibilidade entre o hero e o passo a passo. */
+.home-stats {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(16px, 1.8vw, 28px) clamp(18px, 3vw, 48px);
+  color: #fff;
+  background: #000;
+}
+
+.home-stats::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -70% -5%;
+  background:
+    radial-gradient(circle at 8% 50%, rgba(232, 177, 56, 0.15), transparent 27%),
+    radial-gradient(circle at 92% 38%, rgba(232, 177, 56, 0.1), transparent 24%);
+  pointer-events: none;
+}
+
+.home-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  width: min(1640px, 100%);
+  margin: 0 auto;
+  padding: 0;
+  gap: 1px;
+  overflow: hidden;
+  border-top: 1px solid rgba(232, 177, 56, 0.32);
+  border-bottom: 1px solid rgba(232, 177, 56, 0.32);
+  background: rgba(232, 177, 56, 0.2);
+  list-style: none;
+}
+
+.home-stats__grid li {
+  display: flex;
+  min-width: 0;
+  min-height: clamp(170px, 14vw, 220px);
+  padding: clamp(28px, 3.4vw, 52px) clamp(16px, 2.4vw, 38px);
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.025), transparent 62%),
+    #090909;
+}
+
+.home-stats__grid strong {
+  display: block;
+  color: #e8b138;
+  font-family: var(--display);
+  font-size: clamp(54px, 5.15vw, 86px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  text-shadow: 0 10px 34px rgba(232, 177, 56, 0.13);
+}
+
+.home-stats__grid span {
+  display: block;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(13px, 1.08vw, 17px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (max-width: 1050px) {
+  .home-stats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-stats__grid li {
+    min-height: 150px;
+    align-items: center;
+    padding: 30px 18px;
+    text-align: center;
+  }
+
+  .home-stats__grid li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .home-stats__grid strong {
+    font-size: clamp(48px, 8.5vw, 72px);
+  }
+
+  .home-stats__grid span {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .home-stats {
+    padding: 10px 14px 18px;
+  }
+
+  .home-stats__grid li {
+    min-height: 126px;
+    padding: 24px 10px;
+  }
+
+  .home-stats__grid strong {
+    font-size: clamp(42px, 13vw, 56px);
+  }
+
+  .home-stats__grid span {
+    max-width: 145px;
+    margin-top: 11px;
+    font-size: 12px;
+  }
+}
+
 /* Alinhamento óptico do ícone com o texto nos CTAs finais. */
 .success-final-cta .home-cta > .house-icon::before,
 .final-cta .home-cta > .house-icon::before {
   transform: translateY(-4px);
+}
+
+/* Faixa de instituições parceiras */
+.partners .partner-icons {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  margin-top: clamp(38px, 5vw, 60px);
+  padding: 1px;
+  border: 1px solid rgba(185, 130, 32, 0.28);
+  background: rgba(185, 130, 32, 0.24);
+}
+
+.partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 118px;
+  padding: 22px 14px;
+  background: #fff;
+}
+
+.partner-icons .partner-logo img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 58px;
+  object-fit: contain;
+}
+
+.partner-icons .partner-logo--wide img {
+  max-height: 52px;
+}
+
+@media (max-width: 1180px) {
+  .partners .partner-icons {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .partners .partner-icons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 30px;
+  }
+
+  .partner-logo {
+    min-height: 96px;
+    padding: 18px 12px;
+  }
+
+  .partner-icons .partner-logo img {
+    max-height: 48px;
+  }
+
+  .partner-icons .partner-logo--wide img {
+    max-height: 44px;
+  }
 }
