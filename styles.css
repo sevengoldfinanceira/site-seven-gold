@@ -4538,7 +4538,7 @@ body,
   flex: 0 0 calc((100% - 18px) / 2);
   overflow: hidden;
   aspect-ratio: 1 / 1;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   background: #000;
   border: 0;
   border-radius: 0;

@@ -202,14 +202,38 @@ function visibleSpecialists() {
   return 2;
 }
 
+function getPageStarts() {
+  const n = specialistCards.length;
+  if (n === 0) return [];
+  const v = visibleSpecialists();
+  if (v >= n) return [0];
+  const starts = [];
+  let current = 0;
+  while (current < n - v) {
+    starts.push(current);
+    current += v;
+  }
+  starts.push(n - v);
+  return [...new Set(starts)];
+}
+
 function specialistPages() {
-  return Math.ceil(specialistCards.length / visibleSpecialists());
+  return getPageStarts().length;
+}
+
+function getCardScrollPosition(cardIndex) {
+  const card = specialistCards[cardIndex];
+  if (!card || !specialistsTrack) return 0;
+  const trackRect = specialistsTrack.getBoundingClientRect();
+  const cardRect = card.getBoundingClientRect();
+  return specialistsTrack.scrollLeft + cardRect.left - trackRect.left;
 }
 
 function renderSpecialistDots() {
   if (!carouselDots) return;
   carouselDots.innerHTML = "";
-  for (let index = 0; index < specialistPages(); index += 1) {
+  const pages = getPageStarts();
+  for (let index = 0; index < pages.length; index += 1) {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.setAttribute("aria-label", `Ver grupo ${index + 1} de especialistas`);
@@ -220,9 +244,15 @@ function renderSpecialistDots() {
 }
 
 function showSpecialist(index) {
-  activeSpecialist = (index + specialistPages()) % specialistPages();
-  specialistsTrack?.scrollTo({ left: specialistsTrack.clientWidth * activeSpecialist, behavior: "smooth" });
-  carouselDots?.querySelectorAll("button").forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === activeSpecialist));
+  const pages = getPageStarts();
+  if (pages.length === 0) return;
+  activeSpecialist = (index + pages.length) % pages.length;
+  const targetCardIndex = pages[activeSpecialist];
+  const targetScrollLeft = getCardScrollPosition(targetCardIndex);
+  specialistsTrack?.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
+  carouselDots?.querySelectorAll("button").forEach((dot, dotIndex) => {
+    dot.classList.toggle("active", dotIndex === activeSpecialist);
+  });
 }
 
 function stopSpecialistAutoPlay() {
@@ -275,8 +305,27 @@ specialistCarousel?.addEventListener("focusout", () => {
 specialistsTrack?.addEventListener("scroll", () => {
   window.clearTimeout(specialistsTrack.scrollTimer);
   specialistsTrack.scrollTimer = window.setTimeout(() => {
-    const index = Math.round(specialistsTrack.scrollLeft / specialistsTrack.clientWidth);
-    if (index !== activeSpecialist) showSpecialist(index);
+    const pages = getPageStarts();
+    const currentScroll = specialistsTrack.scrollLeft;
+    
+    let closestPageIndex = 0;
+    let minDifference = Infinity;
+    
+    pages.forEach((cardIndex, pageIndex) => {
+      const targetScroll = getCardScrollPosition(cardIndex);
+      const diff = Math.abs(currentScroll - targetScroll);
+      if (diff < minDifference) {
+        minDifference = diff;
+        closestPageIndex = pageIndex;
+      }
+    });
+    
+    if (closestPageIndex !== activeSpecialist) {
+      activeSpecialist = closestPageIndex;
+      carouselDots?.querySelectorAll("button").forEach((dot, dotIndex) => {
+        dot.classList.toggle("active", dotIndex === activeSpecialist);
+      });
+    }
   }, 80);
 });
 
