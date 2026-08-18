@@ -5835,8 +5835,9 @@ body.home-page main .story-card a.video-button:focus-visible {
 }
 
 .home-stats__grid li:last-child strong {
-  font-size: clamp(29px, 2.5vw, 38px);
-  letter-spacing: -0.035em;
+  font-size: clamp(20px, 1.8vw, 26px);
+  letter-spacing: -0.025em;
+  white-space: normal;
 }
 
 .home-stats__grid span {
@@ -5869,7 +5870,8 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .home-stats__grid li:last-child strong {
-    font-size: clamp(34px, 7vw, 50px);
+    font-size: clamp(24px, 5vw, 38px);
+    white-space: normal;
   }
 
   .home-stats__grid span {
