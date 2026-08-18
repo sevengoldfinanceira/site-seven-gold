@@ -351,3 +351,58 @@ if (specialistCarousel && "IntersectionObserver" in window) {
 }
 
 document.addEventListener("visibilitychange", scheduleSpecialistAutoPlay);
+
+// Navegação entre Polos de Atendimento
+const locationTabs = document.querySelector(".location-tabs");
+const tabButtons = document.querySelectorAll(".tab-button");
+const locationTitle = document.getElementById("location-title");
+const officeCard = document.getElementById("office-card");
+const officeAddress = document.getElementById("office-address");
+const officeDescription = document.getElementById("office-description");
+const officeRoute = document.getElementById("office-route");
+const officeMap = document.getElementById("office-map");
+
+const locationPoles = {
+  sp: {
+    title: "Estamos no coração de São Paulo",
+    address: "Av. Maria Coelho Aguiar, 215<br>Jardim São Luís – São Paulo/SP<br>CEP 05805-000",
+    description: "Estamos localizados no coração de São Paulo para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.",
+    routeUrl: "https://maps.google.com/?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000",
+    mapUrl: "https://www.google.com/maps?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000&output=embed",
+    cardClass: "polo-sp"
+  },
+  sbc: {
+    title: "Estamos no coração de São Bernardo do Campo",
+    address: "R. José Versolato, 111<br>Centro – São Bernardo do Campo/SP<br>CEP 09750-730",
+    description: "Estamos localizados no coração de São Bernardo do Campo para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.",
+    routeUrl: "https://maps.app.goo.gl/VQDcSxcXX92tFH8eA",
+    mapUrl: "https://www.google.com/maps?q=R.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009750-730&output=embed",
+    cardClass: "polo-sbc"
+  }
+};
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const target = button.getAttribute("data-target");
+    const data = locationPoles[target];
+    if (!data) return;
+
+    // Atualiza botões ativos
+    tabButtons.forEach(btn => {
+      btn.classList.toggle("active", btn === button);
+      btn.setAttribute("aria-selected", btn === button ? "true" : "false");
+    });
+
+    // Atualiza conteúdo
+    if (locationTitle) locationTitle.textContent = data.title;
+    if (officeAddress) officeAddress.innerHTML = data.address;
+    if (officeDescription) officeDescription.textContent = data.description;
+    if (officeRoute) officeRoute.setAttribute("href", data.routeUrl);
+    if (officeMap) officeMap.setAttribute("src", data.mapUrl);
+
+    // Atualiza classe no card do escritório (troca de imagem e posicionamento de fundo)
+    if (officeCard) {
+      officeCard.className = `office-card ${data.cardClass}`;
+    }
+  });
+});

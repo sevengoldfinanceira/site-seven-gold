@@ -140,11 +140,31 @@
     </section>
 
     <section class="location section dark-section" id="localizacao">
-      <div><div class="section-head light"><span>Atendimento presencial</span><h2>Estamos no coração de São Bernardo do Campo</h2></div><p>Atendemos com horário agendado para oferecer mais conforto, privacidade e atenção ao seu planejamento.</p><p>Aqui você recebe uma análise personalizada e esclarece todas as suas dúvidas sobre a conquista do seu imóvel.</p><a class="button gold calendar-button location-booking-button" href="simulador.html"><span class="calendar-icon" aria-hidden="true"></span>Agendar atendimento</a></div>
-      <article class="office-card"><span>Nosso escritório</span><h3>R. José Versolato, 111 - Centro, São Bernardo do Campo - SP, 09750-730</h3><p>Estamos localizados no coração de São Bernardo do Campo para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.</p><p>Agende sua visita e descubra qual é o melhor caminho para conquistar seu imóvel.</p><div class="button-row"><a class="button gold map-button" href="https://maps.app.goo.gl/VQDcSxcXX92tFH8eA"><span class="map-icon" aria-hidden="true"></span>Rota Google Maps</a></div></article>
+      <div class="location-tabs" role="tablist">
+        <button class="tab-button active" role="tab" aria-selected="true" data-target="sp">Polo São Paulo</button>
+        <button class="tab-button" role="tab" aria-selected="false" data-target="sbc">Polo São Bernardo do Campo</button>
+      </div>
+      <div>
+        <div class="section-head light">
+          <span>Atendimento presencial</span>
+          <h2 id="location-title">Estamos no coração de São Paulo</h2>
+        </div>
+        <p>Atendemos com horário agendado para oferecer mais conforto, privacidade e atenção ao seu planejamento.</p>
+        <p>Aqui você recebe uma análise personalizada e esclarece todas as suas dúvidas sobre a conquista do seu imóvel.</p>
+        <a class="button gold calendar-button location-booking-button" href="simulador.html"><span class="calendar-icon" aria-hidden="true"></span>Agendar atendimento</a>
+      </div>
+      <article class="office-card polo-sp" id="office-card">
+        <span>Nosso escritório</span>
+        <h3 id="office-address">Av. Maria Coelho Aguiar, 215<br>Jardim São Luís – São Paulo/SP<br>CEP 05805-000</h3>
+        <p id="office-description">Estamos localizados no coração de São Paulo para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.</p>
+        <div class="button-row">
+          <a class="button gold map-button" id="office-route" href="https://maps.google.com/?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000" target="_blank" rel="noopener"><span class="map-icon" aria-hidden="true"></span>Rota Google Maps</a>
+        </div>
+      </article>
       <div class="google-map">
         <iframe
-          src="https://www.google.com/maps?q=R.%20Jos%C3%A9%20Versolato%2C%20111%20-%20Centro%2C%20S%C3%A3o%20Bernardo%20do%20Campo%20-%20SP%2C%2009750-730&output=embed"
+          id="office-map"
+          src="https://www.google.com/maps?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000&output=embed"
           title="Localização da Seven Gold Financeira no Google Maps"
           loading="lazy"
           allowfullscreen
