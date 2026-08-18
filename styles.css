@@ -5910,7 +5910,7 @@ body.home-page main .story-card a.video-button:focus-visible {
 /* Faixa de instituições parceiras */
 .partners .partner-icons {
   display: grid;
-  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
   margin-top: clamp(38px, 5vw, 60px);
@@ -5924,8 +5924,8 @@ body.home-page main .story-card a.video-button:focus-visible {
   align-items: center;
   justify-content: center;
   min-width: 0;
-  min-height: 118px;
-  padding: 22px 14px;
+  min-height: 140px;
+  padding: 24px 18px;
   overflow: hidden;
   background: #fff;
 }
@@ -5934,12 +5934,12 @@ body.home-page main .story-card a.video-button:focus-visible {
   width: auto;
   max-width: 100%;
   height: auto;
-  max-height: 58px;
+  max-height: 78px;
   object-fit: contain;
 }
 
 .partner-icons .partner-logo--wide img {
-  max-height: 52px;
+  max-height: 70px;
 }
 
 /* Compensa as margens transparentes internas dos arquivos de marca. */
@@ -5951,22 +5951,13 @@ body.home-page main .story-card a.video-button:focus-visible {
   transform: scale(1.6);
 }
 
-.partner-logo--bb img,
-.partner-logo--embracon img {
+.partner-logo--bb img {
   transform: scale(1.22);
-}
-
-.partner-logo--porto img {
-  transform: scale(1.42);
-}
-
-.partner-logo--ancora img {
-  transform: scale(1.5);
 }
 
 @media (max-width: 1180px) {
   .partners .partner-icons {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -5977,20 +5968,19 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .partner-logo {
-    min-height: 96px;
-    padding: 18px 12px;
+    min-height: 110px;
+    padding: 20px 14px;
   }
 
   .partner-icons .partner-logo img {
-    max-height: 48px;
+    max-height: 64px;
   }
 
   .partner-icons .partner-logo--wide img {
-    max-height: 44px;
+    max-height: 58px;
   }
 
-  .partner-logo--santander img,
-  .partner-logo--ancora img {
+  .partner-logo--santander img {
     transform: scale(1.4);
   }
 }
