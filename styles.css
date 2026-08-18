@@ -5962,14 +5962,6 @@ body.home-page main .story-card a.video-button:focus-visible {
   transform: scale(1.5);
 }
 
-.partner-logo--alpha {
-  padding-inline: 6px;
-}
-
-.partner-logo--alpha img {
-  transform: scale(1.08);
-}
-
 @media (max-width: 1180px) {
   .partners .partner-icons {
     grid-template-columns: repeat(5, minmax(0, 1fr));
