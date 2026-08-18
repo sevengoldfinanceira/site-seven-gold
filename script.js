@@ -366,7 +366,7 @@ const locationPoles = {
   sp: {
     title: "Estamos no coração de Santo Amaro",
     address: "Av. Maria Coelho Aguiar, 215<br>Jardim São Luís – São Paulo/SP<br>CEP 05805-000",
-    description: "Estamos localizados no coração de Santo Amaro para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.",
+    description: "Estamos localizados em Santo Amaro, próximo a estação Giovani Gronchi (10m a pé) e Santo Amaro (17m a pé), prontos para receber você com toda a estrutura necessária para um atendimento consultivo e personalizado.",
     routeUrl: "https://maps.google.com/?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000",
     mapUrl: "https://www.google.com/maps?q=Av.+Maria+Coelho+Aguiar,+215+-+Jardim+S%C3%A3o+Lu%C3%ADs,+S%C3%A3o+Paulo+-+SP,+05805-000&output=embed",
     cardClass: "polo-sp"
