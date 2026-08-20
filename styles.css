@@ -5142,6 +5142,13 @@ body {
   }
 }
 
+/* Centraliza o formulário na altura do conteúdo lateral em telas amplas. */
+@media (min-width: 1241px) {
+  .simulator-redesign .simulator-form-card {
+    align-self: center;
+  }
+}
+
 /* Um pouco mais de luz no rosto da lateral direita do banner inicial. */
 @media (min-width: 901px) {
   .hero.hero::after {
@@ -5231,6 +5238,7 @@ body {
 /* Dá mais presença aos símbolos dentro das duas bordas do rodapé. */
 .footer.footer .footer-bottom .footer-copyright > .material-symbols-outlined {
   font-size: 36px;
+  font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 36;
   line-height: 1;
 }
 
@@ -5953,6 +5961,23 @@ body.home-page main .story-card a.video-button:focus-visible {
 
 .partner-logo--bb img {
   transform: scale(1.22);
+}
+
+.partner-logo--safra img {
+  max-height: 66px;
+}
+
+.partner-logo--porto img {
+  transform: scale(1.18);
+}
+
+.partner-logo--btg img {
+  max-height: 62px;
+}
+
+.partner-logo--sicredi img,
+.partner-logo--sicoob img {
+  max-height: 58px;
 }
 
 @media (max-width: 1180px) {
