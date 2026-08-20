@@ -5955,6 +5955,23 @@ body.home-page main .story-card a.video-button:focus-visible {
   transform: scale(1.22);
 }
 
+.partner-logo--safra img {
+  max-height: 66px;
+}
+
+.partner-logo--porto img {
+  transform: scale(1.18);
+}
+
+.partner-logo--btg img {
+  max-height: 62px;
+}
+
+.partner-logo--sicredi img,
+.partner-logo--sicoob img {
+  max-height: 58px;
+}
+
 @media (max-width: 1180px) {
   .partners .partner-icons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
