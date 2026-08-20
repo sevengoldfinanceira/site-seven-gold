@@ -6384,3 +6384,35 @@ body.home-page main .story-card a.video-button:focus-visible {
     text-align: center;
   }
 }
+
+/* Encosta a fotografia do banner no cabeçalho somente no mobile. */
+@media (max-width: 650px) {
+  .home-page .hero-home__media img {
+    top: 0;
+    height: 92%;
+    object-position: center top;
+    transform: none;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+    mask-image:
+      linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
+      linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+  }
+
+  .home-page .hero-home__overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0.16) 0%,
+        rgba(0, 0, 0, 0.12) 28%,
+        rgba(0, 0, 0, 0.72) 64%,
+        #000 100%
+      ),
+      linear-gradient(90deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.16) 24%,
+        rgba(0, 0, 0, 0.16) 76%,
+        #000 100%
+      );
+  }
+}
