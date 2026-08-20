@@ -6487,3 +6487,18 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-bottom: 20px;
   }
 }
+
+/* Elimina o vazio antes da logo do rodapé somente no mobile. */
+@media (max-width: 650px) {
+  .footer.footer {
+    padding-top: 0;
+  }
+
+  .footer.footer > .footer-about {
+    overflow: hidden;
+  }
+
+  .footer.footer > .footer-about img {
+    margin-top: -72px;
+  }
+}
