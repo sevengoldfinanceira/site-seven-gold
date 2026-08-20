@@ -6444,3 +6444,39 @@ body.home-page main .story-card a.video-button:focus-visible {
   overflow: hidden;
   border-radius: 12px;
 }
+
+/* Remove os vazios acima e abaixo do banner do Mural somente no mobile. */
+@media (max-width: 650px) {
+  .success-page-body .hero-mural {
+    min-height: 0;
+    height: auto;
+    align-items: stretch;
+  }
+
+  .success-page-body .hero-mural__bg::after {
+    background-position: center top;
+  }
+
+  .success-page-body .hero-mural__overlay {
+    background:
+      linear-gradient(180deg,
+        rgba(0, 0, 0, 0.16) 0%,
+        rgba(0, 0, 0, 0.18) 34%,
+        rgba(0, 0, 0, 0.68) 72%,
+        #000 100%
+      ),
+      linear-gradient(90deg,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.08) 28%,
+        rgba(0, 0, 0, 0.08) 72%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+  }
+
+  .success-page-body .hero-mural__content {
+    min-height: 0;
+    align-items: flex-end;
+    padding-top: clamp(170px, 50vw, 205px);
+    padding-bottom: 16px;
+  }
+}
