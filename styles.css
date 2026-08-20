@@ -6207,3 +6207,27 @@ body.home-page main .story-card a.video-button:focus-visible {
   height: 24px;
   background: url("https://cdn.simpleicons.org/whatsapp/000000") center / contain no-repeat;
 }
+
+/* Centraliza as colunas e os links do rodapé somente no mobile. */
+@media (max-width: 650px) {
+  .footer > div:not(.footer-about):not(.footer-bottom) {
+    text-align: center;
+  }
+
+  .footer > div:not(.footer-about):not(.footer-bottom) > h3 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .footer > div:not(.footer-about):not(.footer-contact):not(.footer-bottom) > a {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  .footer-contact p,
+  .footer-contact .social-links {
+    justify-content: center;
+  }
+}
