@@ -5729,6 +5729,25 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-top: 24px;
     padding-bottom: 28px;
   }
+
+  .home-page .why .image-arch {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .home-page .why .image-arch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 43%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .home-page .why::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.6) 52%, rgba(0, 0, 0, 0.78) 100%);
+  }
 }
 
 /* Cabeçalho desktop mais compacto, preservando o menu mobile. */
