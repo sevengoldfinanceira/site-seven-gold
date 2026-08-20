@@ -6438,3 +6438,9 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-bottom: 72px;
   }
 }
+
+/* Arredondamento leve dos cards de endereço no desktop e mobile. */
+.home-page .location .office-card {
+  overflow: hidden;
+  border-radius: 12px;
+}
