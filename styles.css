@@ -6417,6 +6417,13 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 }
 
+/* Mantém todo o texto do banner sobre a parte principal da foto no mobile. */
+@media (max-width: 650px) {
+  .home-page .hero-home__text {
+    transform: translateY(-76px);
+  }
+}
+
 /* Mantém a descrição dos escritórios em duas linhas no mobile. */
 .stats-mobile-break {
   display: none;
