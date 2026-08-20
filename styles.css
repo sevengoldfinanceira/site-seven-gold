@@ -6009,6 +6009,10 @@ body.home-page main .story-card a.video-button:focus-visible {
   max-height: 58px;
 }
 
+.partner-logo--bv img {
+  max-height: 70px;
+}
+
 @media (max-width: 1180px) {
   .partners .partner-icons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
