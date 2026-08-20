@@ -6281,3 +6281,43 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-bottom: 24px;
   }
 }
+
+/* Centraliza a apresentação da análise gratuita somente no mobile. */
+@media (max-width: 650px) {
+  .simulator-redesign .simulator-intro {
+    width: 100%;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-kicker,
+  .simulator-redesign .simulator-intro h1 {
+    align-items: center;
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-intro-text {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-benefit-list {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .simulator-redesign .simulator-benefit-list article {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-benefit-list article div {
+    width: 100%;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
