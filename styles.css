@@ -6335,3 +6335,31 @@ body.home-page main .story-card a.video-button:focus-visible {
     font-size: 12px;
   }
 }
+
+/* Centraliza todos os textos do formulário somente no mobile. */
+@media (max-width: 650px) {
+  .simulator-redesign .simulator-form-card,
+  .simulator-redesign .simulator-form-card label {
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-form-card input,
+  .simulator-redesign .simulator-form-card select,
+  .simulator-redesign .simulator-form-card textarea {
+    padding-right: 54px;
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-form-card select {
+    text-align-last: center;
+  }
+
+  .simulator-redesign .simulator-form-card .form-submit,
+  .simulator-redesign .simulator-form-card .form-note {
+    text-align: center;
+  }
+
+  .simulator-redesign .simulator-form-card .form-note {
+    align-items: center;
+  }
+}
