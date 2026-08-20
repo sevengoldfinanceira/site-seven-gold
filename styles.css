@@ -1490,14 +1490,14 @@ a {
 
 @media (max-width: 650px) {
   .hero-home__media img {
-    top: 8%;
-    height: 82%;
+    top: 2%;
+    height: 88%;
     -webkit-mask-image:
       linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
+      linear-gradient(to bottom, transparent 0%, #000 8%, #000 78%, transparent 100%);
     mask-image:
       linear-gradient(to right, transparent 0%, transparent 4%, #000 18%, #000 86%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
+      linear-gradient(to bottom, transparent 0%, #000 8%, #000 78%, transparent 100%);
   }
 }
 
