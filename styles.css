@@ -6416,3 +6416,18 @@ body.home-page main .story-card a.video-button:focus-visible {
       );
   }
 }
+
+/* Mantém a descrição dos escritórios em duas linhas no mobile. */
+.stats-mobile-break {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  .stats-mobile-break {
+    display: initial;
+  }
+
+  .home-stats__grid li:last-child span {
+    max-width: 270px;
+  }
+}
