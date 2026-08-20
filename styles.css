@@ -6422,6 +6422,10 @@ body.home-page main .story-card a.video-button:focus-visible {
   .home-page .hero-home__text {
     transform: translateY(-76px);
   }
+
+  .home-page .home-stats {
+    margin-top: -120px;
+  }
 }
 
 /* Mantém a descrição dos escritórios em duas linhas no mobile. */
