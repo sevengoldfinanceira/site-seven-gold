@@ -6497,6 +6497,10 @@ body.home-page main .story-card a.video-button:focus-visible {
   .footer.footer {
     padding-bottom: 20px;
   }
+
+  .footer.footer > .footer-contact {
+    padding-top: 18px;
+  }
 }
 
 /* Elimina o vazio antes da logo do rodapé somente no mobile. */
