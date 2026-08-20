@@ -5236,30 +5236,37 @@ body {
   }
 }
 
-/* Dá mais presença aos símbolos dentro das duas bordas do rodapé. */
+/* Mantém escudo e cadeado com o mesmo tratamento visual. */
 .footer.footer .footer-bottom .footer-copyright > .material-symbols-outlined {
-  color: transparent;
-  font-size: 0;
+  color: #e8b138;
+  font-size: 32px;
   line-height: 1;
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 20;
 }
 
 .footer.footer .footer-bottom .footer-copyright > .material-symbols-outlined::before {
-  content: "";
-  display: block;
-  width: 29px;
-  height: 34px;
-  background: #e8b138;
-  clip-path: polygon(50% 0, 88% 14%, 88% 48%, 80% 66%, 67% 81%, 50% 95%, 33% 81%, 20% 66%, 12% 48%, 12% 14%);
+  content: none;
+}
+
+.footer.footer .footer-bottom .footer-security {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 .footer.footer .footer-bottom .footer-security > .material-symbols-outlined {
   display: grid;
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 58px;
   place-items: center;
+  border: 1px solid rgba(232, 177, 56, 0.42);
+  border-radius: 7px;
+  color: #e8b138;
   font-size: 32px;
   line-height: 1;
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 20;
 }
 
 /* Depoimento em destaque: composição clara, ampla e premium. */
