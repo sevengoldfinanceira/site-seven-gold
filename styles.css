@@ -4541,7 +4541,7 @@ body,
   scroll-snap-align: start;
   background: #000;
   border: 0;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 .specialist-card img {
@@ -4550,7 +4550,7 @@ body,
   height: 100%;
   object-fit: contain;
   object-position: center;
-  border-radius: 0;
+  border-radius: inherit;
 }
 
 .story-layout {
@@ -4673,6 +4673,7 @@ body,
 
   .specialist-card {
     flex-basis: 100%;
+    border-radius: 12px;
   }
 
   .specialists-track::-webkit-scrollbar { display: none; }
