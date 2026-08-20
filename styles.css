@@ -6517,3 +6517,12 @@ body.home-page main .story-card a.video-button:focus-visible {
     margin-top: -60px;
   }
 }
+
+/* Faz as fotos dos dois banners começarem abaixo do cabeçalho no mobile. */
+@media (max-width: 650px) {
+  .home-page .hero-home__media,
+  .success-page-body .hero-mural__bg {
+    top: 84px;
+    height: calc(100% - 84px);
+  }
+}
