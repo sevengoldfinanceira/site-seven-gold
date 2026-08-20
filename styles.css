@@ -6303,6 +6303,8 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .simulator-redesign .simulator-benefit-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -6310,14 +6312,26 @@ body.home-page main .story-card a.video-button:focus-visible {
 
   .simulator-redesign .simulator-benefit-list article {
     grid-template-columns: 1fr;
+    align-content: start;
     justify-items: center;
     gap: 12px;
+    padding: 10px 4px;
     text-align: center;
   }
 
   .simulator-redesign .simulator-benefit-list article div {
     width: 100%;
     padding-right: 8px;
+    padding-bottom: 0;
     padding-left: 8px;
+    border-bottom: 0;
+  }
+
+  .simulator-redesign .simulator-benefit-list strong {
+    font-size: 13px;
+  }
+
+  .simulator-redesign .simulator-benefit-list p {
+    font-size: 12px;
   }
 }
