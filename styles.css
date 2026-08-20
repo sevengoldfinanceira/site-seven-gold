@@ -6431,3 +6431,10 @@ body.home-page main .story-card a.video-button:focus-visible {
     max-width: 270px;
   }
 }
+
+/* Separa as bolinhas das setas do carrossel no mobile. */
+@media (max-width: 650px) {
+  .team .specialists-carousel {
+    padding-bottom: 72px;
+  }
+}
