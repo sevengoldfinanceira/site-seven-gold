@@ -5142,6 +5142,13 @@ body {
   }
 }
 
+/* Centraliza o formulário na altura do conteúdo lateral em telas amplas. */
+@media (min-width: 1241px) {
+  .simulator-redesign .simulator-form-card {
+    align-self: center;
+  }
+}
+
 /* Um pouco mais de luz no rosto da lateral direita do banner inicial. */
 @media (min-width: 901px) {
   .hero.hero::after {
