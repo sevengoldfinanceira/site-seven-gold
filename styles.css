@@ -6480,3 +6480,10 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-bottom: 16px;
   }
 }
+
+/* Remove o excesso de preto depois dos links legais no mobile. */
+@media (max-width: 650px) {
+  .footer.footer {
+    padding-bottom: 20px;
+  }
+}
