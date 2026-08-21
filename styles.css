@@ -6525,4 +6525,9 @@ body.home-page main .story-card a.video-button:focus-visible {
     top: 84px;
     height: calc(100% - 84px);
   }
+
+  .home-page .hero-home__media {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
+  }
 }
