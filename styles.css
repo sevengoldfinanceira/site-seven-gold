@@ -6530,4 +6530,8 @@ body.home-page main .story-card a.video-button:focus-visible {
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 100%);
   }
+
+  .success-page-body .hero-mural__bg::before {
+    content: none;
+  }
 }
