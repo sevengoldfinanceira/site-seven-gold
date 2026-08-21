@@ -6498,7 +6498,7 @@ body.home-page main .story-card a.video-button:focus-visible {
     padding-bottom: 20px;
   }
 
-  .footer.footer > .footer-contact {
+  .footer.footer > div:not(.footer-bottom) + div:not(.footer-bottom) {
     padding-top: 18px;
   }
 }
