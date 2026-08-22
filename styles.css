@@ -727,7 +727,7 @@ a {
   .success-stats {
     position: relative;
     z-index: 4;
-    margin-top: clamp(-280px, -30vh, -230px);
+    margin-top: clamp(-230px, -24vh, -190px);
   }
 
   .success-stats strong { white-space: nowrap; }
