@@ -5014,6 +5014,17 @@ body {
   }
 }
 
+/* Respiro branco entre os resultados e o título do Mural de Clientes. */
+.dream-wall-section.dream-wall-section {
+  padding-top: clamp(72px, 7vw, 96px);
+}
+
+@media (max-width: 650px) {
+  .dream-wall-section.dream-wall-section {
+    padding-top: 54px;
+  }
+}
+
 /* Menos espaço vazio após o carrossel de especialistas */
 .team.team {
   padding-bottom: clamp(34px, 4vw, 54px);
