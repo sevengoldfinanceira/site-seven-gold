@@ -724,6 +724,12 @@ a {
 }
 
 @media (min-width: 901px) {
+  .success-stats {
+    position: relative;
+    z-index: 4;
+    margin-top: clamp(-280px, -30vh, -230px);
+  }
+
   .success-stats strong { white-space: nowrap; }
 }
 
