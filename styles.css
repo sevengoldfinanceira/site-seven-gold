@@ -1635,7 +1635,7 @@ a {
 .hero-mural__text {
   width: min(46vw, 620px);
   text-align: left;
-  transform: translateY(95px);
+  transform: translateY(0);
 }
 
 .hero-mural__eyebrow {
