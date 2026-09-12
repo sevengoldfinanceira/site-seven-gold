@@ -1346,7 +1346,7 @@ a {
 }
 
 .hero-home__eyebrow {
-  margin: 0 0 32px;
+  margin: 24px 0 0;
   color: #d8b34a;
   font-size: 13px;
   font-weight: 900;
@@ -1473,7 +1473,7 @@ a {
   }
 
   .hero-home__eyebrow {
-    margin-bottom: 20px;
+    margin: 20px 0 0;
     font-size: 11px;
     letter-spacing: 0.25em;
   }
@@ -5998,7 +5998,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .home-page .hero-home__text {
-    transform: translateY(-82px);
+    transform: translateY(0);
   }
 
   .home-page .home-stats {
@@ -6014,7 +6014,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 
   .home-page .hero-home__eyebrow {
-    margin-bottom: 18px;
+    margin: 20px 0 0;
   }
 
   .home-page .hero-home__title {
