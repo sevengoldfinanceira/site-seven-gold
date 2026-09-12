@@ -765,7 +765,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -1141,7 +1141,8 @@ a {
 }
 
 .clients .client-cards article img {
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
 
 .clients .client-cards article:hover img {
@@ -6180,7 +6181,7 @@ body.home-page main .story-card a.video-button:focus-visible {
   background-position: center center;
 }
 
-.home-page .location .office-card.polo-sbc {
+.home-page .location .office-card.polo-sa {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.76) 48%, rgba(0, 0, 0, 0.86) 76%, rgba(0, 0, 0, 0.97) 90%, #000 100%),
     url("assets/endereco-escritorio-seven-gold.png");
@@ -6198,7 +6199,7 @@ body.home-page main .story-card a.video-button:focus-visible {
 }
 
 @media (max-width: 650px) {
-  .home-page .location .office-card.polo-sbc {
+  .home-page .location .office-card.polo-sa {
     background-position: center 36%;
   }
 }
