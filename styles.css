@@ -6277,50 +6277,13 @@ body.home-page main .story-card a.video-button:focus-visible {
 
 /* Foto do escritório ocupando toda a chamada final. */
 .home-page .final-cta.final-cta {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
   background-color: #000;
-}
-
-.home-page .final-cta.final-cta::before,
-.home-page .final-cta.final-cta::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  inset: 0;
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.66) 48%, rgba(0, 0, 0, 0.84) 100%),
-    var(--final-cta-photo);
+    url("assets/escritorio-final-cta-seven-gold-20260912.jpeg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  will-change: opacity;
-}
-
-.home-page .final-cta.final-cta::before {
-  --final-cta-photo: url("assets/local-atendimento-sala-01.jpeg");
-  animation: why-location-photo-first 14s ease-in-out infinite;
-}
-
-.home-page .final-cta.final-cta::after {
-  --final-cta-photo: url("assets/local-atendimento-sala-02.jpeg");
-  animation: why-location-photo-second 14s ease-in-out infinite;
-}
-
-.home-page .final-cta.final-cta > * {
-  position: relative;
-  z-index: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-page .final-cta.final-cta::before,
-  .home-page .final-cta.final-cta::after {
-    animation: none;
-  }
-
-  .home-page .final-cta.final-cta::before { opacity: 1; }
-  .home-page .final-cta.final-cta::after { opacity: 0; }
 }
 
 .home-page .final-cta h2,
@@ -6329,8 +6292,7 @@ body.home-page main .story-card a.video-button:focus-visible {
 }
 
 @media (max-width: 650px) {
-  .home-page .final-cta.final-cta::before,
-  .home-page .final-cta.final-cta::after {
+  .home-page .final-cta.final-cta {
     background-position: center 48%;
   }
 }
