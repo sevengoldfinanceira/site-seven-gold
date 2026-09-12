@@ -3769,14 +3769,50 @@ body main .simulator-form-card .form-submit {
 .success-final-cta.success-final-cta {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
   border-top: 1px solid rgba(232, 177, 56, 0.35);
   background-color: #000;
-  background-image:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
-    url('assets/empresa-bg.jpg');
+}
+
+.success-final-cta.success-final-cta::before,
+.success-final-cta.success-final-cta::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  will-change: opacity;
+}
+
+.success-final-cta.success-final-cta::before {
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
+    url('assets/local-atendimento-sala-01.jpeg');
+  animation: why-location-photo-first 14s ease-in-out infinite;
+}
+
+.success-final-cta.success-final-cta::after {
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
+    url('assets/local-atendimento-sala-02.jpeg');
+  animation: why-location-photo-second 14s ease-in-out infinite;
+}
+
+.success-final-cta.success-final-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-final-cta.success-final-cta::before,
+  .success-final-cta.success-final-cta::after {
+    animation: none;
+  }
+
+  .success-final-cta.success-final-cta::before { opacity: 1; }
+  .success-final-cta.success-final-cta::after { opacity: 0; }
 }
 
 /* Depoimentos 30% menores nas páginas principal e mural. */
