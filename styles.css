@@ -5985,6 +5985,29 @@ body.home-page main .story-card a.video-button:focus-visible {
   line-height: 1.35;
 }
 
+/* Exibe a faixa de credibilidade dentro da primeira tela no desktop. */
+@media (min-width: 1051px) {
+  .home-page .hero-home {
+    height: 100svh;
+    min-height: 720px;
+  }
+
+  .home-page .hero-home__content {
+    min-height: 100%;
+    padding-bottom: 150px;
+  }
+
+  .home-page .hero-home__text {
+    transform: translateY(-82px);
+  }
+
+  .home-page .home-stats {
+    z-index: 5;
+    margin-top: -182px;
+    background: transparent;
+  }
+}
+
 @media (max-width: 1050px) {
   .home-stats__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
