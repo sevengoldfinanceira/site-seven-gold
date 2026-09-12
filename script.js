@@ -25,21 +25,6 @@ function updateHeaderAppearance() {
 window.addEventListener("scroll", updateHeaderAppearance, { passive: true });
 updateHeaderAppearance();
 
-const dreamWall = document.querySelector(".dream-wall");
-
-if (dreamWall) {
-  const photos = [...dreamWall.children];
-
-  for (let index = photos.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [photos[index], photos[randomIndex]] = [photos[randomIndex], photos[index]];
-  }
-
-  const shuffledPhotos = document.createDocumentFragment();
-  photos.forEach((photo) => shuffledPhotos.appendChild(photo));
-  dreamWall.appendChild(shuffledPhotos);
-}
-
 const featuredClientCards = document.querySelector(".client-cards");
 
 if (featuredClientCards) {
@@ -199,7 +184,8 @@ let specialistCarouselPaused = false;
 
 function visibleSpecialists() {
   if (window.innerWidth <= 650) return 1;
-  return 2;
+  if (window.innerWidth <= 1000) return 2;
+  return 3;
 }
 
 function getPageStarts() {
