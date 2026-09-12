@@ -2691,6 +2691,41 @@ main .button .form-button-icon,
   mask-composite: intersect;
 }
 
+.why .why-location-gallery .why-location-photo {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.why .why-location-gallery .why-location-photo:first-child {
+  animation: why-location-photo-first 14s ease-in-out infinite;
+}
+
+.why .why-location-gallery .why-location-photo:last-child {
+  animation: why-location-photo-second 14s ease-in-out infinite;
+}
+
+@keyframes why-location-photo-first {
+  0%, 42%, 100% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+}
+
+@keyframes why-location-photo-second {
+  0%, 42%, 100% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why .why-location-gallery .why-location-photo {
+    animation: none;
+  }
+
+  .why .why-location-gallery .why-location-photo:first-child {
+    opacity: 1;
+  }
+}
+
 .why::after {
   content: "";
   position: absolute;
