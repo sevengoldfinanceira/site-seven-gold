@@ -2699,11 +2699,11 @@ main .button .form-button-icon,
 }
 
 .why .why-location-gallery .why-location-photo:first-child {
-  animation: why-location-photo-first 14s ease-in-out infinite;
+  animation: why-location-photo-first 4s ease-in-out infinite;
 }
 
 .why .why-location-gallery .why-location-photo:last-child {
-  animation: why-location-photo-second 14s ease-in-out infinite;
+  animation: why-location-photo-second 4s ease-in-out infinite;
 }
 
 @keyframes why-location-photo-first {
