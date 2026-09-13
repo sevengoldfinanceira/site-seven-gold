@@ -3789,15 +3789,11 @@ body main .simulator-form-card .form-submit {
 .success-final-cta.success-final-cta::before {
   background-image:
     linear-gradient(0deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
-    url('assets/local-atendimento-sala-01.jpeg');
-  animation: why-location-photo-first 14s ease-in-out infinite;
+    url("assets/escritorio-final-cta-recepcao-seven-gold-20260912-v2.jpeg");
 }
 
 .success-final-cta.success-final-cta::after {
-  background-image:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.82)),
-    url('assets/local-atendimento-sala-02.jpeg');
-  animation: why-location-photo-second 14s ease-in-out infinite;
+  display: none;
 }
 
 .success-final-cta.success-final-cta > * {
