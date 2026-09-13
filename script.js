@@ -40,6 +40,27 @@ if (featuredClientCards) {
   featuredClientCards.appendChild(shuffledCards);
 }
 
+const dreamWallImages = [...document.querySelectorAll(".dream-wall img")];
+
+dreamWallImages.forEach((image, index) => {
+  if (index < 9) image.loading = "eager";
+
+  const retryImageLoad = () => {
+    if (image.dataset.retryAttempted === "true") return;
+
+    image.dataset.retryAttempted = "true";
+    const retryUrl = new URL(image.currentSrc || image.src, window.location.href);
+    retryUrl.searchParams.set("retry", "20260912-1");
+    image.src = retryUrl.href;
+  };
+
+  image.addEventListener("error", retryImageLoad, { once: true });
+
+  if (image.complete && image.naturalWidth === 0) {
+    retryImageLoad();
+  }
+});
+
 const animatedSections = [...document.querySelectorAll("main > section")];
 const statsSections = document.querySelectorAll(".home-stats, .success-stats");
 const countUpFormatter = new Intl.NumberFormat("pt-BR");
