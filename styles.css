@@ -1292,8 +1292,8 @@ a {
   height: 106%;
   object-fit: contain;
   object-position: right center;
-  filter: saturate(0.96) contrast(1.02);
-  opacity: 0.96;
+  filter: none;
+  opacity: 1;
   transform: translateY(-50%);
   -webkit-mask-image:
     linear-gradient(to right, transparent 0%, #000 22%, #000 86%, transparent 100%),
