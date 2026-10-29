@@ -6559,6 +6559,11 @@ body.home-page main .story-card a.video-button:focus-visible {
     transform: translateY(-210px);
   }
 
+  .home-page .hero-home__button,
+  .home-page .hero-home__eyebrow {
+    translate: 0 220px;
+  }
+
   .home-page .home-stats {
     margin-top: -120px;
   }
