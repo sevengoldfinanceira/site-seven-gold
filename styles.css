@@ -6553,10 +6553,10 @@ body.home-page main .story-card a.video-button:focus-visible {
   }
 }
 
-/* Mantém todo o texto do banner sobre a parte principal da foto no mobile. */
+/* Mantém o texto acima dos rostos na fotografia do banner no mobile. */
 @media (max-width: 650px) {
   .home-page .hero-home__text {
-    transform: translateY(-76px);
+    transform: translateY(-150px);
   }
 
   .home-page .home-stats {
