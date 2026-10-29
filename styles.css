@@ -6556,7 +6556,12 @@ body.home-page main .story-card a.video-button:focus-visible {
 /* Mantém o texto acima dos rostos na fotografia do banner no mobile. */
 @media (max-width: 650px) {
   .home-page .hero-home__text {
-    transform: translateY(-150px);
+    transform: translateY(-210px);
+  }
+
+  .home-page .hero-home__button,
+  .home-page .hero-home__eyebrow {
+    translate: 0 220px;
   }
 
   .home-page .home-stats {
